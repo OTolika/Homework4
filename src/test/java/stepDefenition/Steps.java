@@ -3,6 +3,7 @@ package stepDefenition;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Тогда;
+import io.qameta.allure.Step;
 
 public class Steps
 {
@@ -11,6 +12,7 @@ public class Steps
     double value;
     String typeOperation;
 
+    @Step("Загружаем 2 числа")
     @Дано("^два числа (.*) и (.*)$")
     public void given (int a, int b)
     {
@@ -18,6 +20,7 @@ public class Steps
         this.b = b;
     }
 
+    @Step("Находим сумму 2 чисел")
     @Тогда("^находим сумму двух чисел$")
     public void summa()
     {
@@ -25,6 +28,7 @@ public class Steps
         typeOperation = "Сумма";
     }
 
+    @Step("Находим разность 2 чисел")
     @Тогда("^находим разность двух чисел$")
     public void difference()
     {
@@ -32,6 +36,7 @@ public class Steps
         typeOperation = "Разность";
     }
 
+    @Step("Находим произведение 2 чисел")
     @Тогда("^находим произведение двух чисел$")
     public void multiply()
     {
@@ -39,6 +44,7 @@ public class Steps
         typeOperation = "Произведение";
     }
 
+    @Step("Находим частное 2 чисел")
     @Тогда("^находим частное двух чисел$")
     public void division()
     {
@@ -46,6 +52,7 @@ public class Steps
         typeOperation = "Частное";
     }
 
+    @Step("Вывод результала калькуляции на экран")
     @И("^выводим число на экран$")
     public void printResult()
     {
